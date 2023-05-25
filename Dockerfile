@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN cd /etc/yum.repos.d/ && \
     sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* && \
-    dnf update
+    dnf update -y
     
 # Install necessary tools and dependencies
 RUN yum update -y && \
