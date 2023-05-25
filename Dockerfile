@@ -8,17 +8,17 @@ RUN cd /etc/yum.repos.d/ && \
     
 # Install necessary tools and dependencies
 RUN yum update -y && \
-    yum install -y wget gcc make rpm-build
+    yum install -y wget gcc g++ make rpm-build
 
 # Download the source code of aria2
-RUN wget https://github.com/aria2/aria2/releases/download/release-1.35.0/aria2-1.35.0.tar.gz && \
-    tar xf aria2-1.35.0.tar.gz
+RUN wget https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.gz && \
+    tar xf aria2-1.36.0.tar.gz
 
 # Install additional dependencies for building aria2
 RUN yum install -y openssl-devel sqlite-devel expat-devel zlib-devel
 
 # Set the working directory to the extracted aria2 source code
-WORKDIR /aria2-1.35.0
+WORKDIR /aria2-1.36.0
 
 # Build and install aria2
 RUN ./configure && \
