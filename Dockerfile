@@ -8,8 +8,15 @@ RUN cd /etc/yum.repos.d/ && \
     
 # Install necessary tools and dependencies
 RUN yum update -y && \
-    yum install -y wget gcc g++ make rpm-build
-
+    yum install -y gcc gcc-c++ \
+    libtool libtool-ltdl \
+    make cmake wget \
+    git \
+    pkgconfig \
+    sudo \
+    automake autoconf \
+    yum-utils rpm-build && \
+    yum clean all
 # Download the source code of aria2
 RUN wget https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.gz && \
     tar xf aria2-1.36.0.tar.gz
