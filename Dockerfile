@@ -1,6 +1,10 @@
 # Use the official CentOS image as the base
-FROM centos7
-
+FROM centos:latest
+RUN cd /etc/yum.repos.d/ && \
+    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* && \
+    dnf update
+    
 # Install necessary tools and dependencies
 RUN yum update -y && \
     yum install -y wget gcc make rpm-build
