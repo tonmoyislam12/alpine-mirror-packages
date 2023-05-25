@@ -1,5 +1,5 @@
 # Use the official CentOS image as the base
-FROM centos:latest
+FROM centos7
 
 # Install necessary tools and dependencies
 RUN yum update -y && \
