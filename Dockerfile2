@@ -1,0 +1,29 @@
+FROM alpine:latest
+
+# Install required dependencies
+RUN apk update && apk add --no-cache \
+    git \
+    build-base \
+    cmake \
+    openssl-dev \
+    zlib-dev \
+    c-ares-dev \
+    libxml2-dev \
+    sqlite-dev \
+    ca-certificates
+
+# Clone the Aria2 repository
+RUN git clone https://github.com/aria2/aria2.git /tmp/aria2
+
+# Build and install Aria2
+RUN cd /tmp/aria2 && \
+    autoreconf -i && \
+    ./configure && \
+    make && \
+    make install
+
+# Cleanup
+RUN rm -rf /tmp/aria2
+
+# Set the entrypoint for the container
+ENTRYPOINT ["aria2c"]
