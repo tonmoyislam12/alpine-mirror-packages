@@ -14,7 +14,7 @@ RUN chmod 777 /usr/src/app
 RUN yum install -y gcc gcc-c++ \
     libtool libtool-ltdl \
     make cmake wget \
-    git epel-release \
+    git epel-release raven-multimedia \
     pkgconfig \
     rpmdevtools \
     automake autoconf \
