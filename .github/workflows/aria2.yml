@@ -1,7 +1,10 @@
 name: Build aria2 for alpine
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   BuildBase:
     runs-on: ubuntu-latest
