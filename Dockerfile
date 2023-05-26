@@ -27,7 +27,9 @@ RUN ./configure --prefix=/usr/local --disable-debug --disable-doc --disable-ffpl
     --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 \
     --enable-libxvid --enable-libzimg --enable-libzmq --enable-lto --enable-pic --enable-postproc \
     --enable-pthreads --enable-shared --enable-vaapi --enable-vdpau --enable-vulkan --enable-libjxl \
-    --enable-libsvtav1 --enable-libvpl
+    --enable-libsvtav1 --enable-libvpl \
+    CFLAGS='-Wno-deprecated-declarations' CXXFLAGS='-Wno-deprecated-declarations' \
+    CPPFLAGS='-Wno-deprecated-declarations' CCFLAGS='-Wno-deprecated-declarations'
 RUN make -s -j$(nproc)
 RUN make install
 
