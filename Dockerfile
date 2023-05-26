@@ -21,4 +21,4 @@ RUN yum update -y && \
     yum clean all
 
 RUN rpmdev-setuptree && dnf download --source $PACKAGE && rpm -ivh aria2-1.35.0-2.el8.src.rpm 
-RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cat *.spec
+RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && cat *.spec
