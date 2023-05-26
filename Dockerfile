@@ -21,4 +21,4 @@ RUN yum update -y && \
     yum clean all
 
 RUN rpmdev-setuptree && dnf download --source $PACKAGE && rpm -ivh *.rpm
-RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && dnf builddep *.spec && rpmbuild -ba *.spec
+RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && yum-builddep *.spec && rpmbuild -ba *.spec
