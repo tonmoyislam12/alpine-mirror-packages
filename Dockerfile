@@ -13,12 +13,12 @@ RUN yum update -y && \
     yum install -y gcc gcc-c++ \
     libtool libtool-ltdl \
     make cmake wget \
-    git \
+    git epel-release \
     pkgconfig \
     sudo \
     automake autoconf \
     yum-utils rpm-build && \
     yum clean all
 
-RUN yumdownloader --source $PACKAGE && ls -a && yum-builddep ${PACKAGE}
-RUN cd rpmbuild/SPECS && rpmbuild -bp aria2.spec
+RUN rpmdev-setuptree && dnf download --source $PACKAGE && ls -a
+RUN cd rpmbuild/ && ls SOURCES/
