@@ -15,7 +15,7 @@ RUN yum update -y && \
     make cmake wget \
     git epel-release \
     pkgconfig \
-    sudo \
+    rpmdevtools \
     automake autoconf \
     yum-utils rpm-build && \
     yum clean all
