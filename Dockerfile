@@ -12,7 +12,7 @@ RUN apk update && apk add --no-cache \
     libvorbis-dev libvpx-dev libwebp-dev libxfixes-dev libxml2-dev nasm \
     opus-dev perl-dev pulseaudio-dev sdl2-dev soxr-dev v4l-utils-dev \
     vidstab-dev vulkan-loader-dev x264-dev x265-dev xvidcore-dev \
-    zeromq-dev zimg-dev zlib-dev
+    zeromq-dev zimg-dev zlib-dev onevpl-dev libjxl-dev svt-av1-dev
     
 RUN git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git
 
