@@ -7,12 +7,12 @@ RUN chmod 777 /usr/src/app
 RUN dnf install -y gcc gcc-c++ \
     libtool libtool-ltdl \
     make cmake wget \
-    git epel-release \
+    git \
     pkgconfig \
     rpmdevtools \
     automake autoconf \
-    yum-utils rpm-build && \
-    yum clean all
+    rpm-build && \
+    dnf clean all
 
 RUN rpmdev-setuptree && dnf download --source ffmpeg && rpm -ivh *.rpm
 RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && yum-builddep -y *.spec && rpmbuild -ba *.spec
