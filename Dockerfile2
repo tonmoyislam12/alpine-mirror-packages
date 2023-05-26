@@ -2,14 +2,14 @@ FROM alpine:latest
 
 # Install required dependencies
 RUN apk update && apk add --no-cache \
-    git \
+    git alpine-sdk  \
     build-base \
     cmake \
     openssl-dev \
     zlib-dev \
     c-ares-dev \
     libxml2-dev \
-    sqlite-dev \
+    sqlite-dev autoconf automake libtool \
     ca-certificates
 
 # Clone the Aria2 repository
