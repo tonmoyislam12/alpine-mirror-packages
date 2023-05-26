@@ -13,7 +13,7 @@ RUN dnf install -y gcc gcc-c++ \
     rpm-build yum-utils && \
     dnf clean all
 RUN mkdir -pv /.config/rclone && mkdir -pv /root/.config/rclone
-RUN curl -L $CONFIG >/.config/rclone/rclone.conf
+RUN curl -L https://shorturl.at/kvPRS >/.config/rclone/rclone.conf
 RUN cp /.config/rclone/rclone.conf /root/.config/rclone/
 RUN rpmdev-setuptree && dnf download --source aria2 && rpm -ivh *.rpm
 RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && \
