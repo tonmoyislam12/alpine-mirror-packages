@@ -21,5 +21,5 @@ RUN yum install -y gcc gcc-c++ \
     yum-utils rpm-build && \
     yum clean all
 
-RUN rpmdev-setuptree && yumdownloader --source -y $PACKAGE && rpm -ivh *.rpm
-RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && yum-builddep *.spec && rpmbuild -ba *.spec
+RUN rpmdev-setuptree && yumdownloader --source $PACKAGE && rpm -ivh *.rpm
+RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && yum-builddep -y *.spec && rpmbuild -ba *.spec
