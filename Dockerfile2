@@ -3,7 +3,7 @@ FROM alpine:latest
 # Install required dependencies
 RUN apk update && apk add --no-cache \
     git alpine-sdk  \
-    build-base autotools-dev autopoint \
+    build-base autopoint \
     cmake  \
     openssl-dev \
     zlib-dev \
