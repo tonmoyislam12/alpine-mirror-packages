@@ -1,6 +1,7 @@
 FROM alpine:latest
 
 RUN apk update && apk add --no-cache \
+    --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     build-base \
     git \
     yasm \
