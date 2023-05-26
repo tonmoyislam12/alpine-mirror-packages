@@ -3,8 +3,8 @@ FROM alpine:latest
 # Install required dependencies
 RUN apk update && apk add --no-cache \
     git alpine-sdk  \
-    build-base \
-    cmake \
+    build-base autotools-dev autopoint \
+    cmake  \
     openssl-dev \
     zlib-dev \
     c-ares-dev \
