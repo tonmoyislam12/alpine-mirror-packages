@@ -27,4 +27,4 @@ jobs:
           file: ./Dockerfile2
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/tonmoyislam12/ffmpeg-alpine:latest
+          tags: ghcr.io/tonmoyislam12/ffmpeg-alpine:aria2

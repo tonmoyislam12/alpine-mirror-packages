@@ -1,0 +1,39 @@
+# Use the official Alpine base image
+FROM alpine:latest
+
+# Install the required build dependencies
+RUN apk add --no-cache \
+    g++ \
+    make \
+    qt5-qtbase-dev \
+    qt5-qtsvg-dev \
+    boost-dev \
+    openssl-dev \
+    qt5-linguist-tools \
+    qt5-qttools-dev \
+    qt5-qtwebengine-dev \
+    qt5-qtwebsockets-dev \
+    qt5-qtwebchannel-dev \
+    libtorrent-rasterbar-dev \
+    zlib-dev \
+    qt5-qttranslations
+
+# Clone the qBittorrent-nox source code from the official repository
+RUN apk add --no-cache git \
+    && git clone --branch release-4.3.6 --depth 1 https://github.com/qbittorrent/qBittorrent.git /qbittorrent
+
+# Build and install qBittorrent-nox
+WORKDIR /qbittorrent
+RUN ./configure --disable-gui --disable-stacktrace \
+    && make -j$(nproc) \
+    && make install
+
+# Cleanup unnecessary files
+RUN rm -rf /qbittorrent \
+    && apk del --no-cache git g++ make
+
+# Expose the default qBittorrent-nox port
+EXPOSE 8080
+
+# Set the entrypoint command to run qBittorrent-nox
+CMD ["qbittorrent-nox"]

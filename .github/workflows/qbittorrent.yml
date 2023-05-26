@@ -1,4 +1,4 @@
-name: Build FFMPEG for alpine
+name: Build qbittorrent-nox for alpine
 
 on:
   workflow_dispatch
@@ -21,7 +21,7 @@ jobs:
         uses: docker/build-push-action@v2.7.0
         with:
           context: .
-          file: ./Dockerfile
+          file: ./Dockerfile3
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/tonmoyislam12/ffmpeg-alpine:ffmpeg
+          tags: ghcr.io/tonmoyislam12/ffmpeg-alpine:qbit
