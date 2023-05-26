@@ -11,7 +11,7 @@ RUN dnf install -y gcc gcc-c++ \
     pkgconfig \
     rpmdevtools \
     automake autoconf \
-    rpm-build && \
+    rpm-build yum-utils && \
     dnf clean all
 
 RUN rpmdev-setuptree && dnf download --source ffmpeg && rpm -ivh *.rpm
