@@ -1,6 +1,6 @@
 FROM centos:latest
 ENV DEBIAN_FRONTEND noninteractive
-ENV PACKAGE aria2
+ENV PACKAGE ffmpeg-free
 RUN cd /etc/yum.repos.d/ && \
     sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/*.repo && \
     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/*.repo && \
