@@ -4,7 +4,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
     
 RUN apk update && apk add --no-cache \
-    build-base git yasm \
+    build-base git yasm libjxl \
     lame-dev libogg-dev libvorbis-dev libvpx-dev x264-dev x265-dev \
     freetype-dev libass-dev ffmpeg gnutls-dev aom-dev libbluray-dev \
     dav1d-dev libdrm-dev fontconfig-dev fribidi-dev \
