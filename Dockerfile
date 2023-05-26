@@ -18,7 +18,7 @@ RUN git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git
 
 WORKDIR /FFmpeg
 
-RUN ./configure --prefix=/usr/local --disable-debug --disable-doc --disable-ffplay --enable-shared
+RUN ./configure --prefix=/usr/local --disable-debug --disable-doc --quiet --enable-shared
 RUN make -j$(nproc) V=0
 RUN make install
 
