@@ -4,17 +4,16 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
     
 RUN apk update && apk add --no-cache \
-    build-base git yasm libjxl-dev onevpl-dev \
-    lame-dev libogg-dev libvorbis-dev libvpx-dev x264-dev x265-dev \
-    freetype-dev libvdpau-dev libass-dev ffmpeg gnutls-dev aom-dev libbluray-dev \
-    dav1d-dev libva-dev libdrm-dev fontconfig-dev fribidi-dev svt-av1-dev \
-    libopenmpt-dev opus-dev libplacebo-dev pulseaudio-dev \
-    librist-dev libvpx-dev soxr-dev libsrt-dev libssh-dev libtheora-dev \
-    v4l-utils-dev vidstab-dev libwebp-dev libxcb-dev \
-    libxml2-dev xvidcore-dev zimg-dev zeromq-dev \
-    lld intel-media-driver vdpauinfo vulkan-loader
-
-
+    build-base git yasm \
+    alsa-lib-dev aom-dev bzip2-dev coreutils dav1d-dev \
+    fontconfig-dev freetype-dev fribidi-dev gnutls-dev imlib2-dev lame-dev \
+    libass-dev libbluray-dev libdrm-dev libopenmpt-dev libplacebo-dev \
+    librist-dev libsrt-dev libssh-dev libtheora-dev libva-dev libvdpau-dev \
+    libvorbis-dev libvpx-dev libwebp-dev libxfixes-dev libxml2-dev nasm \
+    opus-dev perl-dev pulseaudio-dev sdl2-dev soxr-dev v4l-utils-dev \
+    vidstab-dev vulkan-loader-dev x264-dev x265-dev xvidcore-dev \
+    zeromq-dev zimg-dev zlib-dev
+    
 RUN git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git
 
 WORKDIR /FFmpeg
