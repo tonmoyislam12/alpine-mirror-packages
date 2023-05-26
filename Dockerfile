@@ -2,54 +2,18 @@ FROM alpine:latest
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+    
+apk update && apk add --no-cache \
+    build-base git yasm \
+    lame-dev libogg-dev libvorbis-dev libvpx-dev x264-dev x265-dev \
+    freetype-dev libass-dev ffmpeg gnutls-dev aom-dev libbluray-dev \
+    dav1d-dev libdrm-dev fontconfig-dev fribidi-dev \
+    libopenmpt-dev opus-dev libplacebo-dev pulseaudio-dev \
+    librist-dev soxr-dev libsrt-dev libssh-dev libtheora-dev \
+    v4l-utils-dev vidstab-dev libwebp-dev libxcb-dev \
+    libxml2-dev xvidcore-dev zimg-dev zeromq-dev \
+    lld intel-media-driver vdpauinfo vulkan-loader
 
-RUN apk update && apk add --no-cache \
-    build-base \
-    git \
-    yasm \
-    lame-dev \
-    libogg-dev \
-    libvorbis-dev \
-    libvpx-dev \
-    x264-dev \
-    x265-dev \
-    freetype-dev \
-    libass-dev \
-    ffmpeg \
-    gnutls-dev \
-    libaom-dev \
-    libbluray-dev \
-    libdav1d-dev \
-    libdrm-dev \
-    fontconfig-dev \
-    libfreetype-dev \
-    libfribidi-dev \
-    libmp3lame-dev \
-    openmpt-dev \
-    opus-dev \
-    libplacebo-dev \
-    pulseaudio-dev \
-    librist-dev \
-    soxr-dev \
-    libsrt-dev \
-    libssh-dev \
-    libtheora-dev \
-    libv4l-dev \
-    vidstab-dev \
-    libvorbis-dev \
-    libvpx-dev \
-    libwebp-dev \
-    libx264-dev \
-    libx265-dev \
-    libxcb-dev \
-    libxml2-dev \
-    libxvidcore-dev \
-    zimg-dev \
-    zeromq-dev \
-    lld \
-    vaapi-driver-intel \
-    vdpauinfo \
-    vulkan-loader
 
 RUN git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git
 
