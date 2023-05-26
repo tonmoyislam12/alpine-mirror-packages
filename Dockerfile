@@ -11,7 +11,7 @@ RUN cd /etc/yum.repos.d/ && \
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
 
-RUN dnf --enablerepo=raven-multimedia install -y gcc gcc-c++ \
+RUN dnf install -y gcc gcc-c++ \
     libtool libtool-ltdl \
     make cmake wget \
     git epel-release raven-multimedia \
