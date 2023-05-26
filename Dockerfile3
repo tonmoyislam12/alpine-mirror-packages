@@ -9,7 +9,6 @@ RUN apk add --no-cache \
     qt5-qtsvg-dev \
     boost-dev \
     openssl-dev \
-    qt5-linguist-tools \
     qt5-qttools-dev \
     qt5-qtwebengine-dev \
     qt5-qtwebsockets-dev \
