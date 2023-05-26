@@ -1,6 +1,6 @@
 FROM fedora:rawhide
 ENV DEBIAN_FRONTEND noninteractive
-ENV PACKAGE ffmpeg
+ENV PACKAGE aria2
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
 
