@@ -21,5 +21,5 @@ RUN dnf --enablerepo=raven-multimedia install -y gcc gcc-c++ \
     yum-utils rpm-build && \
     yum clean all
 
-RUN rpmdev-setuptree && dnf download --source $PACKAGE && rpm -ivh *.rpm
+RUN rpmdev-setuptree && wget https://pkgs.dyn.su/el8/multimedia/SRPMS/ffmpeg-6.0-1.el8.src.rpm && rpm -ivh *.rpm
 RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && yum-builddep -y *.spec && rpmbuild -ba *.spec
