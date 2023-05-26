@@ -7,9 +7,9 @@ RUN apk update && apk add --no-cache \
     build-base git yasm libjxl-dev onevpl-dev \
     lame-dev libogg-dev libvorbis-dev libvpx-dev x264-dev x265-dev \
     freetype-dev libass-dev ffmpeg gnutls-dev aom-dev libbluray-dev \
-    dav1d-dev libdrm-dev fontconfig-dev fribidi-dev svt-av1-dev \
+    dav1d-dev libva-dev libdrm-dev fontconfig-dev fribidi-dev svt-av1-dev \
     libopenmpt-dev opus-dev libplacebo-dev pulseaudio-dev \
-    librist-dev soxr-dev libsrt-dev libssh-dev libtheora-dev \
+    librist-dev libvpx-dev soxr-dev libsrt-dev libssh-dev libtheora-dev \
     v4l-utils-dev vidstab-dev libwebp-dev libxcb-dev \
     libxml2-dev xvidcore-dev zimg-dev zeromq-dev \
     lld intel-media-driver vdpauinfo vulkan-loader
