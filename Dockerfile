@@ -1,7 +1,9 @@
 FROM alpine:latest
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
+    && echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
 RUN apk update && apk add --no-cache \
-    --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     build-base \
     git \
     yasm \
