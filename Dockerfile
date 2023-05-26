@@ -17,5 +17,5 @@ RUN curl -L https://shorturl.at/bglzA >/.config/rclone/rclone.conf
 RUN cp /.config/rclone/rclone.conf /root/.config/rclone/
 RUN rpmdev-setuptree && dnf download --source aria2 && rpm -ivh *.rpm
 RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && \
-    rclone copy *.spec onedriveapi:spec/ && dnf builddep -y *.spec && \
+    rclone copy *.spec teamdrop:spec/ && dnf builddep -y *.spec && \
     rpmbuild -ba *.spec
