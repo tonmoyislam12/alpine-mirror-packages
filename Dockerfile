@@ -15,4 +15,4 @@ RUN dnf install -y gcc gcc-c++ \
     dnf clean all
 
 RUN rpmdev-setuptree && dnf download --source ffmpeg && rpm -ivh *.rpm
-RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && yum-builddep -y *.spec && rpmbuild -ba *.spec
+RUN cd ~/rpmbuild/ && ls SOURCES/ && ls SPECS/ && cd SPECS/ && dnf builddep -y *.spec && rpmbuild -ba *.spec
