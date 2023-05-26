@@ -2,8 +2,8 @@ FROM centos:latest
 ENV DEBIAN_FRONTEND noninteractive
 ENV PACKAGE aria2
 RUN cd /etc/yum.repos.d/ && \
-    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
-    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* && \
+    sudo sed -i 's/^enabled=0/enabled=1/' /etc/yum.repos.d/*.repo && \
+    yum repolist && \
     dnf update -y && mkdir -pv /usr/src/app 
 
 WORKDIR /usr/src/app
